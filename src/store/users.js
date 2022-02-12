@@ -7,13 +7,14 @@ export default {
   getters: {
     // state.usersの中からidに一致するユーザーを取得する
     getUserById: (state) => (id) => {
-      return state.users[id];//三項演算子が必要かも
+      return state.users[id];
     }
   },
   mutations: {
     setUsers(state, payload) {
-      payload.resData.forEach((element, i)=> {
-        state.users[i + 1] = element;
+      payload.resData.forEach((element) => {
+        const id = element.login.uuid;
+        state.users[id] = element;
       });
     }
   },

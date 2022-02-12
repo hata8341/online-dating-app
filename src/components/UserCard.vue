@@ -32,7 +32,7 @@ export default {
       require: true,
     },
     intialUserId: {
-      type: Number,
+      type: String,
       require: true,
     }
   },

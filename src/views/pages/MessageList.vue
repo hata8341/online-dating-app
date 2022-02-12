@@ -7,7 +7,7 @@
       >
         <v-subheader>MessageList</v-subheader>
         <template
-          v-for="(messages,index) in messageList"
+          v-for="(id,index) in idList"
         >
           <v-list-item
             :key="index"
@@ -15,7 +15,7 @@
             <v-list-item-avatar
             >
               <v-img
-                :src="getImgUrl(index)"
+                :src="getImgUrl(id)"
               >
               </v-img>
             </v-list-item-avatar>
@@ -23,16 +23,16 @@
               <router-link :to="{
                   name:'Chat',
                   params: {
-                    id: index,
-                    imgUrl: getImgUrl(index)
+                    id: id,
+                    imgUrl: getImgUrl(id)
                   }
                 }">
                 <v-list-item-title
-                  v-text="getLastMessage(messages)"
+                  v-text="getLastMessage(id)"
                 >
                 </v-list-item-title>
                 <v-list-item-subtitle
-                  v-text="getLastChatTime(messages)"
+                  v-text="getLastChatTime(id)"
                 >
                 </v-list-item-subtitle>
               </router-link>
@@ -52,27 +52,30 @@ export default {
   },
   data(){
     return {
-      messageList: {type: Object}
+      messageList: {type: Object},
+      idList: [],
     }
   },
   methods:{
     getImgUrl(id){
-      let i =  parseInt(id);
       let user = {type: Object};
-      user =  this.$store.getters['users/getUserById'](i);
+      user =  this.$store.getters['users/getUserById'](id);
       return user.picture.large;
     },
-    getLastMessage(messages){
+    getLastMessage(id){
+      let messages = this.$store.getters['messages/getMessagesById'](id);
       let lastMessageIndex = messages.length-2;
       return messages[lastMessageIndex].message;
     },
-    getLastChatTime(messages){
+    getLastChatTime(id){
+      let messages = this.$store.getters['messages/getMessagesById'](id);
       let lastMessageIndex = messages.length-2;
       return messages[lastMessageIndex].lastChatTime;
     }
   },
   created(){
     this.messageList = this.$store.state.messages.messages;
+    this.idList = Object.keys(this.messageList);
   }
 }
 </script>

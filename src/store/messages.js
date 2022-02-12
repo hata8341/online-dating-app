@@ -2,60 +2,60 @@ export default {
   namespaced: true,
   state: {
     messages: {
-      1: [
-        {
-          message: "テスト２",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "test2",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "こんにちは",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "こんばんは",
-          lastChatTime:"2022 11:00:26"
-        },
-      ],
-      2: [
-        {
-          message: "テスト２",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "test2",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "おやすみ",
-          lastChatTime:"2022 55:55:55"
-        },
-        {
-          message: "こんばんは",
-          lastChatTime:"2022 55:55:55"
-        },
-      ],
-      3: [
-        {
-          message: "テスト２",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "test2",
-          lastChatTime:"2022 11:00:26"
-        },
-        {
-          message: "出かけよう",
-          lastChatTime:"2022 66:66:66"
-        },
-        {
-          message: "こんばんは",
-          lastChatTime:"2022 66:66:66"
-        },
-      ],
+      // 1: [
+      //   {
+      //     message: "テスト２",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "test2",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "こんにちは",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "こんばんは",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      // ],
+      // 2: [
+      //   {
+      //     message: "テスト２",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "test2",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "おやすみ",
+      //     lastChatTime:"2022 55:55:55"
+      //   },
+      //   {
+      //     message: "こんばんは",
+      //     lastChatTime:"2022 55:55:55"
+      //   },
+      // ],
+      // 3: [
+      //   {
+      //     message: "テスト２",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "test2",
+      //     lastChatTime:"2022 11:00:26"
+      //   },
+      //   {
+      //     message: "出かけよう",
+      //     lastChatTime:"2022 66:66:66"
+      //   },
+      //   {
+      //     message: "こんばんは",
+      //     lastChatTime:"2022 66:66:66"
+      //   },
+      // ],
   }
     ,
   },
@@ -66,7 +66,7 @@ export default {
   },
   mutations: {
     setMessages(state, payload) {
-      let id = parseInt(payload.id);
+      let id = payload.id;
       if (state.messages[id] == undefined) {
         state.messages[id] = [
           {

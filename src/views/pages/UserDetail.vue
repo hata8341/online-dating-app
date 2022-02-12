@@ -106,9 +106,9 @@ export default {
     goToChat(user){
       this.$router.push({
         name: 'Chat',
-        path: '/user/'+this.$route.params.id+'/chat',
+        path: '/user/'+ user.login.uuid +'/chat',
         params: {
-          id: this.id,
+          id: user.login.uuid,
           imgUrl: user.picture.large,
         }
       })

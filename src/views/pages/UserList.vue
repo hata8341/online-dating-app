@@ -12,7 +12,7 @@
           >
             <UserCard
               :intialUser="user"
-              :intialUserId="parseInt(i)"
+              :intialUserId="user.login.uuid"
             />
           </v-col>
         </template>
