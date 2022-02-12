@@ -1,16 +1,15 @@
 module.exports = {
   outputDir: 'docs',
+  publicPath: './',
   assetsDir: './',
-  publicPath:
-    process.env.NODE_ENV === 'production' ? '/online-dating-app/' : '/',
   transpileDependencies: [
     'vuetify'
   ],
   configureWebpack: {
     performance: {
-     hints: false,
-     maxAssetSize: 270000,
-     maxEntrypointSize: 700000,
-   }
+    hints: false,
+    maxAssetSize: 270000,
+    maxEntrypointSize: 700000,
+  }
   },
 }
