@@ -1,6 +1,8 @@
 module.exports = {
   outputDir: 'docs',
-  publicPath: '/online-dating-app',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/online-dating-app/'
+    : '/',
   assetsDir: './',
   transpileDependencies: [
     'vuetify'
