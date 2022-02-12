@@ -41,7 +41,6 @@
         </template>
       </v-list>
     </v-container>
-    <router-link to="/">Go To UserList</router-link>
   </v-app>
 </template>
 
