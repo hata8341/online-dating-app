@@ -1,6 +1,15 @@
-<<<<<<< HEAD
 
 # online_dating_app
+
+# DEMO
+
+# Description
+
+# Feature
+
+# online_dating_app
+
+https://hata8341.github.io/online-dating-app/
 
 ## Project setup
 
@@ -19,7 +28,3 @@ yarn serve
 ```
 yarn build
 ```
-
-# online_dating_app
-
-https://hata8341.github.io/online-dating-app/
